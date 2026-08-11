@@ -3,28 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class MonsterGenerate:MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     BaseStatusManager statusManager;
-    [SerializeField]
+    //[SerializeField]
     ConditionManager conditionManager;
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    [SerializeField]
+    MonsterManager monsterManager;
+    [SerializeField]
+    int GenCount=2;
 
-    private void OnDisable()
+    private void Start()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        statusManager = GameObject.Find("BaseManagerObj").GetComponent<BaseStatusManager>();
+        conditionManager = GameObject.Find("ConditionManagerObj").GetComponent<ConditionManager>();
+        MonsterGeneration();
     }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void MonsterGeneration()
     {
-        Debug.Log("ÉVÅ[ÉìÇ™ì«Ç›çûÇ‹ÇÍÇΩÅI");
-        if (scene.name == "ArenaScene")
+        for(int i=0;i<GenCount;++i)
         {
             int monstertype = Random.Range(0, statusManager.Statuss.Length - 1);
             int conditiontype = Random.Range(0, conditionManager.conditionBonuss.Length - 1);
-            StatusGenerate.GenStatus(statusManager.Statuss[monstertype], conditionManager.conditionBonuss[conditiontype]);
+            monsterManager.monsters.Add(StatusGenerate.GenStatus(statusManager.Statuss[monstertype], conditionManager.conditionBonuss[conditiontype]));
         }
     }
 }

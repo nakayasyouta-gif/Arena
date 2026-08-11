@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// モンスターの基礎ステータスを記憶する
+/// モンスターの基礎ステータスを記憶する　一日の最初のアリーナシーン移動時にこれをつけたオブジェクトを生成したい　ショップシーンで削除
 /// </summary>
 public class BaseStatusManager:MonoBehaviour
 {
