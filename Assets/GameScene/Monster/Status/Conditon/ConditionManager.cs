@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// 調子によるボーナスを記憶する
+/// 調子によるボーナスを記憶する　一日の最初のアリーナシーン移動時にこれをつけたオブジェクトを生成したい　ショップシーンで削除
 /// </summary>
 public class ConditionManager:MonoBehaviour
 {
