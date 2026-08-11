@@ -1,18 +1,10 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// ボーナスとかもろもろいれたステータスの記憶
 /// </summary>
-public class MonsterManager : MonoBehaviour
+public class MonsterManager 
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<MonsterStatus> monsters { get; set; }
 }

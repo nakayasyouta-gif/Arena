@@ -5,6 +5,6 @@ atk,
 def,
 crit,
 speed,
-//rate
+rate,
 count
 }
