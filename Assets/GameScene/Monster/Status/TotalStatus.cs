@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TotalStatus
 {
-    BaseStatus status;
+    BaseStatus statuss;
     ConditionBonus conditionBonus;
 
     public float[] totals { get; set; }
@@ -10,14 +10,14 @@ public class TotalStatus
     public float rate { get; private set; }
     public TotalStatus(BaseStatus bases,ConditionBonus conditions)
     {
-        status = bases;
+        statuss = bases;
         conditionBonus=conditions;
     }
     private void GenTotalStatus()
     {
         for (int i = 0; i > (int)StatusCategory.count; ++i)
         {
-            totals[i] = status.bases[i]*conditionBonus.conditions[i];
+            totals[i] = statuss.bases[i]*conditionBonus.conditions[i];
             Debug.Log(totals[i]);
         }
     }

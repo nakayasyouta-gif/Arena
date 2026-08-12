@@ -1,5 +1,6 @@
 public enum StatusCategory
 { 
+maxhp,
 hp,
 atk,
 def,

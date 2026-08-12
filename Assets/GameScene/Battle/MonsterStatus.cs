@@ -5,21 +5,38 @@ using UnityEngine;
 /// </summary>
 public class MonsterStatus
 {
-    public float[] status { get; private set; } = new float[(int)StatusCategory.count];
+    /// <summary>
+    /// 諸々含めたモンスターのステータス
+    /// </summary>
+    public float[] statuss { get; private set; } = new float[(int)StatusCategory.count];
+    /// <summary>
+    /// モンスターの名前
+    /// </summary>
     public string monstername { get; set; }
 
+    /// <summary>
+    /// モンスターの属性
+    /// </summary>
     public Element element { get; private set; }
 
+    /// <summary>
+    /// モンスターの調子
+    /// </summary>
     public ConditionBonus conditionBonus { get; private set; }
+    /// <summary>
+    /// 行動までの時間
+    /// </summary>
 
-    public MonsterStatus(float[] statusvalue, string name, Element element, ConditionBonus condition)
+    public float actcd { get { return 5f - (statuss[(int)StatusCategory.speed] * 0.05f); }}
+
+public MonsterStatus(float[] statusvalue, string name, Element element, ConditionBonus condition)
     {
         this.element = element;
         monstername = name;
         conditionBonus = condition;
         for (int i = 0; i < (int)StatusCategory.count; ++i)
         {
-            status[i] = statusvalue[i];
+            statuss[i] = statusvalue[i];
         }
     }
 }

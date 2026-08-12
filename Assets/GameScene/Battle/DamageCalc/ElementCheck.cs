@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class ElementCalculator
 {
-    public static bool ElementBonus(Element attack, Element defense)
+    public static bool elementbonus(Element attack, Element defense)
     {
         return (attack, defense) switch
         {

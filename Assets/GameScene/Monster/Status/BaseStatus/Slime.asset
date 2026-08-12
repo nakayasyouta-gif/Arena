@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9615dc23684692418469b4c5d7d8611, type: 3}
   m_Name: Slime
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatus
-  <monstername>k__BackingField: 
-  <element>k__BackingField: 0
+  <monstername>k__BackingField: Slime
+  <element>k__BackingField: 1
   <bases>k__BackingField:
   - 0
   - 0

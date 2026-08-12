@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &28508934
+--- !u!1 &164832577
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,122 +127,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 28508935}
-  - component: {fileID: 28508936}
+  - component: {fileID: 164832579}
+  - component: {fileID: 164832578}
   m_Layer: 0
-  m_Name: 'SetConditionManagerObj '
+  m_Name: MonsterManagerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &28508935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28508934}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 408320854}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &28508936
+--- !u!114 &164832578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28508934}
+  m_GameObject: {fileID: 164832577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02063e8b2bee0004e9a77d115003c690, type: 3}
+  m_Script: {fileID: 11500000, guid: 01421ab5244a5da479439ec1eb7795ae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SetConditionManager
-  <conditionBonuss>k__BackingField:
-  - {fileID: 11400000, guid: 2bda8062b8e1f344fb48af9f615e1dff, type: 2}
---- !u!1 &408320853
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408320854}
-  m_Layer: 0
-  m_Name: StaticSetObj
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &408320854
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterManager
+--- !u!4 &164832579
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408320853}
+  m_GameObject: {fileID: 164832577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 476154801}
-  - {fileID: 28508935}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &476154800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 476154801}
-  - component: {fileID: 476154802}
-  m_Layer: 0
-  m_Name: SetBaseManagerObj
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &476154801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476154800}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 408320854}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &476154802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476154800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f2a02d58a5c3447bd9f91f717caaec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SetBaseManager
-  <Statuss>k__BackingField: []
 --- !u!1 &486827582
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,11 +189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 486827582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd95fdcc0a279c41940544ce57b3128, type: 3}
+  m_Script: {fileID: 11500000, guid: 33c9d84657126f9499a8b71e62ff1c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConditonManager
   <conditionBonuss>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2bda8062b8e1f344fb48af9f615e1dff, type: 2}
 --- !u!4 &486827584
 Transform:
   m_ObjectHideFlags: 0
@@ -538,7 +458,7 @@ GameObject:
   - component: {fileID: 1227169447}
   - component: {fileID: 1227169448}
   m_Layer: 0
-  m_Name: StatusManagerObj
+  m_Name: BaseManagerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227169446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feadcbc8a0799c04ab7c2274b86aa70a, type: 3}
+  m_Script: {fileID: 11500000, guid: cdff266485eb76e4f9811b3b05864778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatusManagerM
   <Statuss>k__BackingField: []
@@ -658,4 +578,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1343725497}
   - {fileID: 1652710769}
-  - {fileID: 408320854}
+  - {fileID: 164832579}
