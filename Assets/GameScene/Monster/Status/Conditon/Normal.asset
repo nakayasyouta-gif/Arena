@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 247650631c43a414ca07d14d998fce48, type: 3}
-  m_Name: Angry
-  m_EditorClassIdentifier: Assembly-CSharp::ConditonBonus
-  <conditions>k__BackingField:
-  - 0
-  - 1.2
-  - 0.8
-  - 0
-  - 0
+  m_Name: Normal
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionBonus
+  conditions:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1

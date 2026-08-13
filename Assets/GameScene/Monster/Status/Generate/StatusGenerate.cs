@@ -2,15 +2,17 @@ using UnityEngine;
 
 public static class StatusGenerate
 {
-    public static float[] totalstatuss { get; private set; } = new float[(int)StatusCategory.count];
+   
     public static MonsterStatus GenStatus(BaseStatus bases,ConditionBonus condition)
    {
-        for(int i=0;i>bases.bonuss.Length;++i)
+        float[] totalstatuss = new float[(int)StatusCategory.count];
+
+        for(int i=0;i<bases.bonuss.Length;++i)
         {
-            totalstatuss[i] = bases.bases[i] + Random.Range(0, bases.bonuss[i]);
+            totalstatuss[i] = bases.bases[i] + Random.Range(0, (int)bases.bonuss[i]+1);
             Debug.Log(totalstatuss[i]);
-            
         }
+        totalstatuss[(int)StatusCategory.hp] = totalstatuss[(int)StatusCategory.maxhp];
         return new MonsterStatus(totalstatuss, bases.name, bases.element, condition);
    }
 }
