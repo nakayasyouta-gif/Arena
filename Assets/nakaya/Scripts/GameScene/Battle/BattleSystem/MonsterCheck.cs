@@ -24,5 +24,9 @@ public class MonsterCheck
             return;
 
         Debug.Log($"{monsterManager.monsters[0].monstername}‚ÌŸ‚¿");
+
+        //“q‚¯‹àˆ—
+
+        SceneChanger.SceneLoaded();
     }
 }

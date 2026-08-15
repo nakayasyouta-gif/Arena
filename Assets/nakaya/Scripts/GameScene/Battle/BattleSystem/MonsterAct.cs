@@ -9,7 +9,7 @@ public class MonsterAct
     /// <summary>
     /// モンスターごとの行動CT
     /// </summary>
-    List<float> actcds = new List<float>();
+    public List<float> actcds { get; private set; } = new List<float>();
 
     /// <summary>
     /// targets[攻撃側モンスター][攻撃対象]
@@ -77,11 +77,6 @@ public class MonsterAct
 
             if (actcds[i] <= 0f)
             {
-                if (targets[i].Count == 0)
-                {
-                    ResetActcd(i);
-                    continue;
-                }
 
                 int targetno =
                     targets[i][Random.Range(0, targets[i].Count)];
@@ -89,8 +84,6 @@ public class MonsterAct
                 hpCalculator.Damage(i, targetno);
 
                 if (i >= monsterManager.monsters.Count)continue;
-
-                ResetActcd(i);
             }
         }
     }

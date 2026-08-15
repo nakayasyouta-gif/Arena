@@ -33,7 +33,7 @@ public class HpCalculator
         }
         Debug.Log($"{monsterManager.monsters[attackno].monstername}‚ÌUŒ‚!");
 
-        float damage= Mathf.Min((monsterManager.monsters[attackno].statuss[(int)StatusCategory.atk] - (monsterManager.monsters[defenceno].statuss[(int)StatusCategory.def] / 2))
+        float damage= Mathf.Min((monsterManager.monsters[attackno].statuss[(int)StatusCategory.atk] - (monsterManager.monsters[defenceno].statuss[(int)StatusCategory.def] / 3))
         * Random.Range(0.9f, 1.1f) * elementbonus * critbonus, monsterManager.monsters[defenceno].statuss[(int)StatusCategory.hp]);
         damage=Mathf.Floor(damage);
         monsterManager.monsters[defenceno].statuss[(int)StatusCategory.hp] -= Mathf.Max(damage,1);
