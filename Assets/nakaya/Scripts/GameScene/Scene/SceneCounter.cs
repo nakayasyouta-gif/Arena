@@ -2,15 +2,27 @@ using UnityEngine.SceneManagement;
 
 public static class SceneChanger
 {
-    private static int arenaCount = 0;
+    private static int daycount = 1;
+    private static int arenacount = 1;
+
+    public static int GetDayCount()
+    {
+        return daycount;
+    }
+
+    public static int GetArenaCount()
+    {
+        return arenacount;
+    }
 
     public static void SceneLoaded()
     {
-        arenaCount++;
+        arenacount++;
 
-        if (arenaCount >= 5)
+        if (arenacount > 5)
         {
-            arenaCount = 0; 
+            ++daycount;
+            arenacount = 1;
             SceneManager.LoadScene("ShopScene");
         }
         else
