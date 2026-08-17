@@ -21,6 +21,8 @@ public class WinRateGen
                 if (monster == monsterManager.monsters[i]) continue;
                 odds[i] = 1 / monster.statuss[(int)StatusCategory.rate];
                 winrates[i] = monsterManager.monsters[i].statuss[(int)StatusCategory.rate]/(monsterManager.monsters[i].statuss[(int)StatusCategory.rate] + monster.statuss[(int)StatusCategory.rate]);
+                Debug.Log(odds[i]);
+                Debug.Log(winrates[i]);
             }
             
         }
