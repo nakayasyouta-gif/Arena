@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageText
   canvas: {fileID: 354595475}
-  damagetextprefab: {fileID: 0}
-  maincamera: {fileID: 0}
+  damagetextprefab: {fileID: 8025574579603063688, guid: b091e96cf1501b748849e8f5549578bc, type: 3}
+  maincamera: {fileID: 519420031}
   objManager: {fileID: 843011970}
   textshowtime: 1
 --- !u!1 &214071503
@@ -309,7 +309,7 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 1318353437265177524, guid: 58a0560afd31cd041bf62f1b11dd5c1e, type: 3}
   hpBarParent: {fileID: 596424259}
   objManager: {fileID: 843011970}
-  maincamera: {fileID: 0}
+  maincamera: {fileID: 519420031}
 --- !u!1 &354595471
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +343,7 @@ RectTransform:
   m_Children:
   - {fileID: 596424259}
   - {fileID: 2059922028}
+  - {fileID: 1348453133}
   m_Father: {fileID: 2020908244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -462,6 +463,72 @@ MonoBehaviour:
   systemManager: {fileID: 386261069}
   monsterobjs:
   - {fileID: 2411626151406057159, guid: cdfccca2949d245469629ab8acdeaaa7, type: 3}
+--- !u!1 &366226606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366226609}
+  - component: {fileID: 366226607}
+  - component: {fileID: 366226610}
+  m_Layer: 0
+  m_Name: InputFieldManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &366226607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366226606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ca457aadf92ea4c9b7688b3cc1a114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NumberInput
+  gamblingManager: {fileID: 790273938}
+  monsterManager: {fileID: 164832578}
+--- !u!4 &366226609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366226606}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 445.51584, y: 218.70074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366226610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366226606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8706cc986210f4fbe2ceda4a15ba66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputFieldManager
+  inputfield: {fileID: 3461945465759436661, guid: d1f40f34895692947b3972b4a5962aff, type: 3}
+  fieldparent: {fileID: 1348453133}
+  monstermanager: {fileID: 164832578}
+  numberInput: {fileID: 366226607}
+  inputFieldPositions:
+  - {x: 600, y: 100}
+  - {x: 300, y: 100}
 --- !u!1 &386261067
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +971,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &790273937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790273939}
+  - component: {fileID: 790273938}
+  m_Layer: 0
+  m_Name: GamblingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790273938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790273937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456eeb914dd434a4882b881afa45d4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GamblingManager
+  monsterManager: {fileID: 164832578}
+--- !u!4 &790273939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790273937}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 445.51584, y: 218.70074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &843011969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1247,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatusManagerM
   <Statuss>k__BackingField:
   - {fileID: 11400000, guid: b0c29d56345ad024d9abfea62ac52b3a, type: 2}
+--- !u!1 &1348453132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348453133}
+  m_Layer: 0
+  m_Name: GoldInputFieldParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348453133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348453132}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.3591614, y: 0.5757446, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 354595472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1574947985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,3 +1985,5 @@ SceneRoots:
   - {fileID: 386261068}
   - {fileID: 2020908244}
   - {fileID: 1986579721}
+  - {fileID: 790273939}
+  - {fileID: 366226609}
