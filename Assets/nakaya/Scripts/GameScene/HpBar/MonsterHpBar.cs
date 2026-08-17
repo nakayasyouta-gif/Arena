@@ -74,11 +74,9 @@ public class HpBarManager : MonoBehaviour
             if (i >= objManager.monsterobjs.Count)
                 continue;
 
-            Vector3 worldPos =
-                objManager.monsterobjs[i].transform.position;
+            Vector3 worldPos = objManager.monsterobjs[i].transform.position;
 
-            Vector3 screenPos =
-                maincamera.WorldToScreenPoint(worldPos);
+            Vector3 screenPos =maincamera.WorldToScreenPoint(worldPos);
 
             hpBars[i].transform.position =
                 screenPos + new Vector3(0, 40f, 0);

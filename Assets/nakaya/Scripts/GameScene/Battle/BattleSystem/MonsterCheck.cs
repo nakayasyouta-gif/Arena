@@ -3,6 +3,7 @@ using UnityEngine;
 public class MonsterCheck
 {
     MonsterManager monsterManager;
+    BetManager betManager;
 
     public MonsterCheck(MonsterManager monstermanager)
     {
@@ -25,7 +26,10 @@ public class MonsterCheck
 
         Debug.Log($"{monsterManager.monsters[0].monstername}‚ÌŸ‚¿");
 
+        OnBattleBool.onbattle = false;
+
         //“q‚¯‹àˆ—
+        betManager.ReturnGold();
 
         SceneChanger.SceneLoaded();
     }
