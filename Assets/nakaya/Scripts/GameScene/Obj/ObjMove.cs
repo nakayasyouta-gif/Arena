@@ -13,6 +13,7 @@ public class ObjMove : MonoBehaviour
     }
     public void MoveObj(int no)
     {
+        if (!OnBattle.Battle) return;
         Transform obj = objManager.monsterobjs[no].transform;
 
         Vector3 originalPos = obj.localPosition;

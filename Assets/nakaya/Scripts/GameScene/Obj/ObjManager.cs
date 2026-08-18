@@ -10,10 +10,7 @@ public class ObjManager : MonoBehaviour
 
     private void OnDestroy()
     {
-         for (int i=0;i<monsterobjs.Count;++i)
-        {
-            Destroy(monsterobjs[i]);
-        }
+        ClearMonsterObj();
     }
     public void CreateMonsterObj(GameObject monster)
     {
@@ -22,8 +19,14 @@ public class ObjManager : MonoBehaviour
         monsterobjs.Add(obj);
 
         posSetter.SetObjPos(obj);
-
         DontDestroyOnLoad(obj);
         //hpBarManager.CreateHpBar();
+    }
+    public void ClearMonsterObj()
+    {
+        for (int i = 0; i < monsterobjs.Count; ++i)
+        {
+            Destroy(monsterobjs[i]);
+        }
     }
 }

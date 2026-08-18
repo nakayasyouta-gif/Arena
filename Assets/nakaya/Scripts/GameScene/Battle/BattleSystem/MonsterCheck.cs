@@ -1,53 +1,50 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class MonsterCheck
 {
     MonsterManager monsterManager;
     BetManager betManager;
+    ResultObject resultObject;
 
-    public MonsterCheck(MonsterManager monstermanager,BetManager betmanager)
+    public MonsterCheck(MonsterManager monstermanager, BetManager betmanager, ResultObject resultobject)
     {
         monsterManager = monstermanager;
         betManager = betmanager;
+        resultObject = resultobject;
     }
 
     public void MonsterDead(int no)
     {
         Debug.Log($"{monsterManager.monsters[no].monstername}はたおれた");
 
-        // monsterManager.RemoveMonster(no);
         monsterManager.monsters[no].activemonster = false;
+
         CheckMonsters();
     }
 
-    public void CheckMonsters()
+    /// <summary>
+    /// バトルが終了したら勝者の番号を返す 終了していなければ -1
+    /// </summary>
+    public int CheckMonsters()
     {
         int activeCount = 0;
-        MonsterStatus winner = null;
+        int winnerNo = -1;
 
-        foreach (var monster in monsterManager.monsters)
+        for (int i = 0; i < monsterManager.monsters.Count; i++)
         {
-            if (monster.activemonster)
+            if (monsterManager.monsters[i].activemonster)
             {
                 activeCount++;
-                winner = monster;
+                winnerNo = i;
             }
         }
-
         if (activeCount > 1)
-            return;
+        {
+            return -1;
+        }
+        Debug.Log($"勝者 = {monsterManager.monsters[winnerNo].monstername}");
+        resultObject.BattleEnd(winnerNo);
 
-        // 勝者がいない
-        if (winner == null)
-            return;
-
-        Debug.Log($"{winner.monstername}の勝ち");
-
-        GoldManager.gold += betManager.ReturnGold();
-
-        SceneChanger.SceneLoaded();
+        return winnerNo;
     }
 }

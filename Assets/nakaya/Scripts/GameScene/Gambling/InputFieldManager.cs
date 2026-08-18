@@ -1,61 +1,61 @@
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+//using System.Collections.Generic;
+//using TMPro;
+//using UnityEngine;
 
-public class InputFieldManager : MonoBehaviour
-{
-    [SerializeField]
-    TMP_InputField inputfield;
+//public class InputFieldManager : MonoBehaviour
+//{
+//    [SerializeField]
+//    TMP_InputField inputfield;
 
-    [SerializeField]
-    Transform fieldparent;
+//    [SerializeField]
+//    Transform fieldparent;
 
-    [SerializeField]
-    MonsterManager monstermanager;
+//    [SerializeField]
+//    MonsterManager monstermanager;
 
-    [SerializeField]
-    NumberInput numberInput;
+//    [SerializeField]
+//    NumberInput numberInput;
 
-    [Header("画面座標（左下が0,0）")]
-    [SerializeField]
-    Vector2[] inputFieldPositions;
+//    [Header("画面座標（左下が0,0）")]
+//    [SerializeField]
+//    Vector2[] inputFieldPositions;
 
-    List<TMP_InputField> inputfields = new List<TMP_InputField>();
+//    List<TMP_InputField> inputfields = new List<TMP_InputField>();
 
-    public void CreateInputFields()
-    {
-        Canvas canvas = fieldparent.GetComponentInParent<Canvas>();
+//    public void CreateInputFields()
+//    {
+//        Canvas canvas = fieldparent.GetComponentInParent<Canvas>();
 
-        for (int i = 0; i < monstermanager.monsters.Count; ++i)
-        {
-            TMP_InputField field =Instantiate(inputfield, fieldparent);
+//        for (int i = 0; i < monstermanager.monsters.Count; ++i)
+//        {
+//            TMP_InputField field =Instantiate(inputfield, fieldparent);
 
-            Vector2 screenPosition = inputFieldPositions[i];
+//            Vector2 screenPosition = inputFieldPositions[i];
 
-            Camera cam = null;
+//            Camera cam = null;
 
-            if (canvas.renderMode != RenderMode.ScreenSpaceOverlay)
-            {
-                cam = canvas.worldCamera;
-            }
+//            if (canvas.renderMode != RenderMode.ScreenSpaceOverlay)
+//            {
+//                cam = canvas.worldCamera;
+//            }
 
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                canvas.GetComponent<RectTransform>(),
-                screenPosition,
-                cam,
-                out Vector3 worldPosition
-            );
+//            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+//                canvas.GetComponent<RectTransform>(),
+//                screenPosition,
+//                cam,
+//                out Vector3 worldPosition
+//            );
 
-            field.transform.position = worldPosition;
+//            field.transform.position = worldPosition;
 
-            int index = i;
+//            int index = i;
 
-            field.onEndEdit.AddListener((text) =>
-            {
-                numberInput.CheckNumber(index, text, field);
-            });
+//            field.onEndEdit.AddListener((text) =>
+//            {
+//                numberInput.CheckNumber(index, text, field);
+//            });
 
-            inputfields.Add(field);
-        }
-    }
-}
+//            inputfields.Add(field);
+//        }
+//    }
+//}

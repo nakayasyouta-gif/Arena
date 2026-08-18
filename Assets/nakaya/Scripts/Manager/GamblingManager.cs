@@ -3,13 +3,14 @@ using UnityEngine;
 public class GamblingManager : MonoBehaviour
 {
 
-    WinRateManager winRateManager;
+    
 
     [SerializeField] 
     MonsterManager monsterManager;
+    public WinRateManager winRateManager {  get; private set; }
 
     public BetManager betManager {  get; private set;}
-    public void Start()
+    public void initialise()
     {
         winRateManager = new WinRateManager(monsterManager);
         betManager = new BetManager(winRateManager);

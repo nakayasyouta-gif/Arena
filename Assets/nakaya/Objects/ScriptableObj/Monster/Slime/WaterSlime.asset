@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9615dc23684692418469b4c5d7d8611, type: 3}
-  m_Name: BlueGoblin
+  m_Name: WaterSlime
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatus
-  <monstername>k__BackingField: Goblin
+  <monstername>k__BackingField: WaterSlime
   <element>k__BackingField: 1
   <bases>k__BackingField:
+  - 80
+  - 0
+  - 5000
+  - 5
+  - 5
+  - 8
+  - 10
+  <bonuss>k__BackingField:
   - 120
   - 0
-  - 10
-  - 8
-  - 3
-  - 5
-  - 20
-  <bonuss>k__BackingField:
-  - 180
-  - 0
-  - 35
-  - 18
-  - 17
-  - 15
-  - 130
+  - 7
+  - 24
+  - 25
+  - 29
+  - 110
