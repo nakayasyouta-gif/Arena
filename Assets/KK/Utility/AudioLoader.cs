@@ -6,36 +6,30 @@ public class AudioLoader : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        AudioManager.Instance.LoadBGM(BGMName.GAMESTART_BGM_NAME, "Audio/BGM/LVSD-0006_07_DespairsDawn-full_loop");
-        AudioManager.Instance.LoadBGM(BGMName.CHARACTER_CHOICE_BGM_NAME, "Audio/BGM/LVSD-0006_04_SealedSanctuary_loop");
-        AudioManager.Instance.LoadBGM(BGMName.NORMAL_BATTLE_BGM_NAME, "Audio/BGM/LVSD-0006_03_annulus_loop");
-        AudioManager.Instance.LoadBGM(BGMName.MAP_BGM_NAME, "Audio/BGM/WAV_Bestus_loop");
-        AudioManager.Instance.LoadBGM(BGMName.MIDDLE_BOSS_NAME, "Audio/BGM/LVSD-0006_02_CosmoCounter_loop");
-        AudioManager.Instance.LoadBGM(BGMName.LAST_BOSS_NAME, "Audio/BGM/LVSD-0006_05_BattleAmidstTheStorm_loop");
+        AudioManager.Instance.LoadBGM(BGMName.LOSE_BGM_NAME, "Audio/BGM/BG_make");
+        AudioManager.Instance.LoadBGM(BGMName.BATTLE_BGM_NAME, "Audio/BGM/BG_battle");
+        AudioManager.Instance.LoadBGM(BGMName.WIN_BGM_NAME, "Audio/BGM/BG_win");
+        AudioManager.Instance.LoadBGM(BGMName.SHOP_BGM_NAME, "Audio/BGM/BG_shop");
+        AudioManager.Instance.LoadBGM(BGMName.BET_BGM_NAME, "Audio/BGM/BG_kake");
 
-        AudioManager.Instance.LoadSE(SEName.DAMAGE_SE_NAME, "Audio/SE/Damage");
-        AudioManager.Instance.LoadSE(SEName.BUTTON_SE_NAME, "Audio/SE/Button");
-        AudioManager.Instance.LoadSE(SEName.UPGRADE_SE_NAME, "Audio/SE/Upgrade");
-        AudioManager.Instance.LoadSE(SEName.BACK_SE_NAME, "Audio/SE/Back");
-        AudioManager.Instance.LoadSE(SEName.CONFIRM_SE_NAME, "Audio/SE/Confirm");
-        AudioManager.Instance.LoadSE(SEName.GAMESTART_SE_NAME, "Audio/SE/GameStart");
+        AudioManager.Instance.LoadSE(SEName.ATTACK_SE_NAME, "Audio/SE/SE_attack");
+        AudioManager.Instance.LoadSE(SEName.HIT_SE_NAME, "Audio/SE/SE_hit");
+        AudioManager.Instance.LoadSE(SEName.CRITICAL_SE_NAME, "Audio/SE/SE_critical");
+        AudioManager.Instance.LoadSE(SEName.GAMEEND_SE_NAME, "Audio/SE/SE_gameend");
     }
 
     public void Final()
     {
-        AudioManager.Instance.UnloadBGM(BGMName.GAMESTART_BGM_NAME);
-        AudioManager.Instance.UnloadBGM(BGMName.CHARACTER_CHOICE_BGM_NAME);
-        AudioManager.Instance.UnloadBGM(BGMName.NORMAL_BATTLE_BGM_NAME);
-        AudioManager.Instance.UnloadBGM(BGMName.MAP_BGM_NAME);
-        AudioManager.Instance.UnloadBGM(BGMName.MIDDLE_BOSS_NAME);
-        AudioManager.Instance.UnloadBGM(BGMName.LAST_BOSS_NAME);
+        AudioManager.Instance.UnloadBGM(BGMName.LOSE_BGM_NAME);
+        AudioManager.Instance.UnloadBGM(BGMName.BATTLE_BGM_NAME);
+        AudioManager.Instance.UnloadBGM(BGMName.WIN_BGM_NAME);
+        AudioManager.Instance.UnloadBGM(BGMName.SHOP_BGM_NAME);
+        AudioManager.Instance.UnloadBGM(BGMName.BET_BGM_NAME);
 
-        AudioManager.Instance.UnloadSE(SEName.BUTTON_SE_NAME);
-        AudioManager.Instance.UnloadSE(SEName.DAMAGE_SE_NAME);
-        AudioManager.Instance.UnloadSE(SEName.UPGRADE_SE_NAME);
-        AudioManager.Instance.UnloadSE(SEName.BACK_SE_NAME);
-        AudioManager.Instance.UnloadSE(SEName.CONFIRM_SE_NAME);
-        AudioManager.Instance.UnloadSE(SEName.GAMESTART_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.ATTACK_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.HIT_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.CRITICAL_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.GAMEEND_SE_NAME);
     }
 }
 
@@ -43,21 +37,18 @@ namespace AudioName
 {
     public static class BGMName
     {
-        public static string GAMESTART_BGM_NAME = "Title";
-        public static string CHARACTER_CHOICE_BGM_NAME = "Character";
-        public static string NORMAL_BATTLE_BGM_NAME = "NormalBattle";
-        public static string MAP_BGM_NAME = "MapName";
-        public static string MIDDLE_BOSS_NAME = "MiddleBoss";
-        public static string LAST_BOSS_NAME = "LastBoss";
+        public static string BATTLE_BGM_NAME = "battle";
+        public static string BET_BGM_NAME = "bet";
+        public static string SHOP_BGM_NAME = "shop";
+        public static string WIN_BGM_NAME = "win";
+        public static string LOSE_BGM_NAME = "lose";
     }
 
     public static class SEName
     {
-        public static string DAMAGE_SE_NAME = "Damage";
-        public static string BUTTON_SE_NAME = "Button";
-        public static string UPGRADE_SE_NAME = "Upgrade";
-        public static string BACK_SE_NAME = "Back";
-        public static string CONFIRM_SE_NAME = "Confirm";
-        public static string GAMESTART_SE_NAME = "GameStart";
+        public static string ATTACK_SE_NAME = "attack";
+        public static string CRITICAL_SE_NAME = "critical";
+        public static string GAMEEND_SE_NAME = "gameend";
+        public static string HIT_SE_NAME = "hit";
     }
 }
