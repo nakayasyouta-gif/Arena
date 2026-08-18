@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using AudioName;
 
 public class NumberInput : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class NumberInput : MonoBehaviour
 
         GoldManager.gold -= num;
         OnBattle.Battle = true;
+        AudioManager.Instance.StopBGM(BGMName.BET_BGM_NAME);
+        AudioManager.Instance.PlayBGM(BGMName.BATTLE_BGM_NAME);
         ArenaLoader.LoadArenaScene();
     }
 }

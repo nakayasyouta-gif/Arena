@@ -23,6 +23,15 @@ public class ViewStatus : MonoBehaviour
     [SerializeField]
     float maxratio = 1.5f;
 
+    string[] Counting =
+    {
+        "HP",
+        "攻撃力",
+        "防御力",
+        "素早さ",
+        "クリティカル率"
+    };
+
     private void Start()
     {
         StatusView();
@@ -32,7 +41,7 @@ public class ViewStatus : MonoBehaviour
     {
         MonsterStatus status = monstermanager.monsters[monsterno];
 
-        conditiontext.text = status.conditionBonus.name;
+        conditiontext.text = $"調子：{status.conditionBonus.conditionName}";
 
         for (int i = 0; i <= (int)StatusCategory.speed; i++)
         {
@@ -45,7 +54,7 @@ public class ViewStatus : MonoBehaviour
 
             string value = GetStatusValue(status, category);
 
-            statustexts[i - 1].text = $"{category}: {value}";
+            statustexts[i - 1].text = $"{Counting[i - 1]}: {value}";
         }
     }
 

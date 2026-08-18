@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9615dc23684692418469b4c5d7d8611, type: 3}
   m_Name: GreenGoblin
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatus
-  <monstername>k__BackingField: GreenGoblin
+  <monstername>k__BackingField: "\u30B0\u30EA\u30FC\u30F3\u30B4\u30D6\u30EA\u30F3"
   <element>k__BackingField: 2
   <bases>k__BackingField:
   - 120

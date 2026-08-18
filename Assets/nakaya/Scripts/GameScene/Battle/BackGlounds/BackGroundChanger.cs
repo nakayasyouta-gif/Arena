@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class BackGroundChanger : MonoBehaviour
 {
     [SerializeField]
-    SpriteRenderer background;
+    Image background;
 
     [SerializeField]
     Sprite[] backgrounds;

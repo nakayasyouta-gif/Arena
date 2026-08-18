@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9615dc23684692418469b4c5d7d8611, type: 3}
   m_Name: WaterSlime
   m_EditorClassIdentifier: Assembly-CSharp::BaseStatus
-  <monstername>k__BackingField: WaterSlime
+  <monstername>k__BackingField: "\u30A6\u30A9\u30FC\u30BF\u30FC\u30B9\u30E9\u30A4\u30E0"
   <element>k__BackingField: 1
   <bases>k__BackingField:
   - 80

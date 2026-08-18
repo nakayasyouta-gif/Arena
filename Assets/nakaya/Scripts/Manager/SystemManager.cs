@@ -26,4 +26,5 @@ public class SystemManager : MonoBehaviour
 
         monsterAct = new MonsterAct( monsterManager, hpCalculator);
     }
+
 }
