@@ -6,31 +6,16 @@ public class MonsterAct
     MonsterManager monsterManager;
     HpCalculator hpCalculator;
 
-    /// <summary>
-    /// モンスターごとの行動CT
-    /// </summary>
     public List<float> actcds { get; private set; } = new List<float>();
 
-    /// <summary>
-    /// targets[攻撃側モンスター][攻撃対象]
-    /// </summary>
     List<List<int>> targets = new List<List<int>>();
 
-    public MonsterAct( MonsterManager monstermanager, HpCalculator hpcalculator)
+    public MonsterAct(MonsterManager monstermanager, HpCalculator hpcalculator)
     {
         monsterManager = monstermanager;
         hpCalculator = hpcalculator;
 
         SetActcds();
-        SetTargets();
-
-        monsterManager.OnMonsterRemoved += OnMonsterRemoved;
-    }
-
-    private void OnMonsterRemoved(int no)
-    {
-        actcds.RemoveAt(no);
-
         SetTargets();
     }
 
@@ -52,38 +37,74 @@ public class MonsterAct
         {
             targets.Add(new List<int>());
 
+            // 攻撃者自身が死亡していたら対象設定しなくてもOK
+            if (!monsterManager.monsters[i].activemonster)
+                continue;
+
             for (int j = 0; j < monsterManager.monsters.Count; ++j)
             {
-                if (i != j)
-                {
-                    targets[i].Add(j);
-                }
+                if (i == j)
+                    continue;
+
+                // 死亡しているモンスターは攻撃対象にしない
+                if (!monsterManager.monsters[j].activemonster)
+                    continue;
+
+                targets[i].Add(j);
             }
         }
     }
 
     public void ResetActcd(int cdno)
     {
+        if (cdno < 0 || cdno >= actcds.Count)
+            return;
+
+        if (cdno >= monsterManager.monsters.Count)
+            return;
+
         actcds[cdno] = monsterManager.monsters[cdno].actcd;
     }
 
     public void CountCd()
     {
+        List<int> canAct = new List<int>();
+
         for (int i = 0; i < actcds.Count; ++i)
         {
             if (i >= monsterManager.monsters.Count)continue;
 
-            if (targets.Count <= i || targets[i].Count == 0)continue;
+            if (!monsterManager.monsters[i].activemonster)continue;
+
+            if (targets.Count <= i)continue;
+
+            if (targets[i].Count == 0)continue;
 
             actcds[i] -= Time.deltaTime;
 
             if (actcds[i] <= 0f)
             {
-                int targetno =targets[i][Random.Range(0, targets[i].Count)];
-
-                hpCalculator.Damage(i, targetno);
-
+                canAct.Add(i);
             }
         }
+
+        if (canAct.Count == 0)return;
+
+        int randomIndex = Random.Range(0, canAct.Count);
+        int attackNo = canAct[randomIndex];
+
+        if (!monsterManager.monsters[attackNo].activemonster)return;
+
+        // ターゲットを再確認
+        SetTargets();
+
+        if (targets[attackNo].Count == 0) return;
+
+        int targetNo =targets[attackNo][Random.Range(0, targets[attackNo].Count)];
+
+        // 攻撃対象が死亡していないか確認
+        if (!monsterManager.monsters[targetNo].activemonster)return;
+
+        hpCalculator.Damage(attackNo, targetNo);
     }
 }

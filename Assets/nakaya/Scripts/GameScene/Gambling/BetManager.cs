@@ -11,27 +11,14 @@ public class BetManager
     }
     public int ReturnGold()
     {
-        Debug.Log($"bet = {bet}");
-        Debug.Log($"betno = {betno}");
-        Debug.Log($"monster” = {winRateManager.monsterManager.monsters.Count}");
-
-        MonsterStatus monster = winRateManager.monsterManager.monsters[betno];
-
-        Debug.Log($"“q‚¯‚½ƒ‚ƒ“ƒXƒ^[ = {monster.monstername}");
-        Debug.Log($"activemonster = {monster.activemonster}");
-        Debug.Log($"odds = {winRateManager.odds[betno]}");
-
-        if (monster.activemonster)
+        if (winRateManager.monsterManager.monsters[betno].activemonster)
         {
-            float gold = (float)bet * winRateManager.odds[betno];
+            float gold = (float)bet * (100f / winRateManager.winrates[betno]);
 
             Debug.Log($"Šl“¾ƒS[ƒ‹ƒh = {gold}");
 
             return (int)gold;
         }
-
-        Debug.Log("“q‚¯‚½ƒ‚ƒ“ƒXƒ^[‚Í•‰‚¯‚Ä‚¢‚é");
-
         return 0;
     }
     //public int ReturnGold()

@@ -16,11 +16,6 @@ public class MonsterManager : MonoBehaviour
     /// ˆø” = íœ‚³‚ê‚½ƒ‚ƒ“ƒXƒ^[‚Ì”Ô†
     /// </summary>
     public event Action<int> OnMonsterRemoved;
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void RemoveMonster(int no)
     {
         monsters.RemoveAt(no);

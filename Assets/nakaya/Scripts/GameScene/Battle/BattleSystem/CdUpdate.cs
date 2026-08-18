@@ -14,7 +14,7 @@ public class CdUpdate : MonoBehaviour
     }
     void Update()
     {
-        if (monsterAct == null) return;
+        if (monsterAct == null||!OnBattle.Battle) return;
         monsterAct.CountCd();
         for (int i = 0; i < monsterAct.actcds.Count; i++)
         {
