@@ -19,6 +19,6 @@ public class GoldText : MonoBehaviour
     {
         int.TryParse(goldtext.text, out int gold);
         if (gold == GoldManager.gold) return;
-        goldtext.text = $"Gold:{GoldManager.gold}";
+        goldtext.text = $"Š‹àF{GoldManager.gold}‰~";
     }
-}
+}   

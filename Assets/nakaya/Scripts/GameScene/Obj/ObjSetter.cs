@@ -16,6 +16,7 @@ public class ObjSetter : MonoBehaviour
     /// </summary>
     public void SetObj()
     {
+        print("”­“®");
         int count = 0;
         List<string> names = new List<string>();
         foreach (var monster in monsterManager.monsters)

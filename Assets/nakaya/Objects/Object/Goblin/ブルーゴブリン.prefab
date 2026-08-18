@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3934742985210942095}
   - component: {fileID: 2307662898169582998}
   m_Layer: 0
-  m_Name: BlueGoblin
+  m_Name: "\u30D6\u30EB\u30FC\u30B4\u30D6\u30EA\u30F3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

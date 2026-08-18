@@ -13,6 +13,6 @@ public static class StatusGenerate
             Debug.Log(totalstatuss[i]);
         }
         totalstatuss[(int)StatusCategory.hp] = totalstatuss[(int)StatusCategory.maxhp];
-        return new MonsterStatus(totalstatuss, bases.name, bases.element, condition);
+        return new MonsterStatus(totalstatuss, bases.monstername, bases.element, condition);
    }
 }

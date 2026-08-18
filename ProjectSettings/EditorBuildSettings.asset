@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/KK/Scenes/Title.unity
+    guid: 61abc50e07046ce42b4c0ef509f2aac8
+  - enabled: 1
     path: Assets/nakaya/Scenes/BetScene.unity
     guid: 4195429d76a17f041bab13aa0f06ed6f
   - enabled: 1

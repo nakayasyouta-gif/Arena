@@ -14,6 +14,7 @@ public class ObjManager : MonoBehaviour
     }
     public void CreateMonsterObj(GameObject monster)
     {
+        print("‰‘wu");
         GameObject obj = Instantiate(monster);
 
         monsterobjs.Add(obj);

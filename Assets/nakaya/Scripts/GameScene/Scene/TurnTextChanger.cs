@@ -21,8 +21,8 @@ public class TurnTextChanger : MonoBehaviour
         int day = SceneChanger.GetDayCount();
         int arena = SceneChanger.GetArenaCount();
 
-        daytext.text =$"day{day}";
-        turntext.text = $"match{arena}";
+        daytext.text =$"{day}“ú–Ú";
+        turntext.text = $"‘æ{arena}‡";
 
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3934742985210942095}
   - component: {fileID: 2307662898169582998}
   m_Layer: 0
-  m_Name: WaterSlime
+  m_Name: "\u30A6\u30A9\u30FC\u30BF\u30FC\u30B9\u30E9\u30A4\u30E0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
