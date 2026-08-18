@@ -6,17 +6,19 @@ public class SystemManager : MonoBehaviour
     public MonsterAct monsterAct { get; private set; }
     public MonsterCheck monsterCheck { get; private set; }
 
-    [SerializeField]
-    public MonsterManager monsterManager;
+    public MonsterManager monsterManager {  get; private set;}
+    public GamblingManager gamblingManager {get; private set;}
     [SerializeField]
     public DamageTextManager damageTextManager;
     [SerializeField]
     public HpBarManager hpBarManager;
 
 
-    public void Initialize()
+    public void Awake()
     {
-        monsterCheck = new MonsterCheck(monsterManager);
+        monsterManager = GameObject.Find("MonsterManager").GetComponent<MonsterManager>();
+       gamblingManager = GameObject.Find("GamblingManager").GetComponent<GamblingManager>();
+        monsterCheck = new MonsterCheck(monsterManager,gamblingManager.betManager);
 
         hpCalculator = new HpCalculator( monsterManager,monsterCheck,damageTextManager,hpBarManager);
 

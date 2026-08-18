@@ -11,8 +11,4 @@ public class ConditionManager:MonoBehaviour
 
     [field:Header(" ボーナスの種類")][field:SerializeField]
     public ConditionBonus[] conditionBonuss { get; private set; }
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 }
