@@ -205,8 +205,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 16472717}
-        m_TargetAssemblyTypeName: ConnoisseurLevelUp, Assembly-CSharp
-        m_MethodName: LevelUpStatus
+        m_TargetAssemblyTypeName: ConnoisseurStatusLevelUp, Assembly-CSharp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 36553647}
   - component: {fileID: 36553646}
   - component: {fileID: 36553645}
+  - component: {fileID: 36553648}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -352,7 +353,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36553646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 36553648}
+        m_TargetAssemblyTypeName: ExitShop, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &36553646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +404,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36553643}
   m_CullTransparentMesh: 1
+--- !u!114 &36553648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36553643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d03e86278553e749920c28a30a85c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitShop
 --- !u!1 &335047230
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,8 +502,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 335047235}
-        m_TargetAssemblyTypeName: ConnoisseurLevelUp, Assembly-CSharp
-        m_MethodName: LevelUpStatus
+        m_TargetAssemblyTypeName: ConnoisseurStatusLevelUp, Assembly-CSharp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -855,8 +880,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1278,8 +1303,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1490,8 +1515,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1629,8 +1654,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1187001110}
-        m_TargetAssemblyTypeName: ConnoisseurLevelUp, Assembly-CSharp
-        m_MethodName: LevelUpStatus
+        m_TargetAssemblyTypeName: ConnoisseurStatusLevelUp, Assembly-CSharp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1778,8 +1803,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1917,8 +1942,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1335907910}
-        m_TargetAssemblyTypeName: ConnoisseurLevelUp, Assembly-CSharp
-        m_MethodName: LevelUpStatus
+        m_TargetAssemblyTypeName: ConnoisseurStatusLevelUp, Assembly-CSharp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2313,8 +2338,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2452,8 +2477,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1624158126}
-        m_TargetAssemblyTypeName: ConnoisseurLevelUp, Assembly-CSharp
-        m_MethodName: LevelUpStatus
+        m_TargetAssemblyTypeName: ConnoisseurStatusLevelUp, Assembly-CSharp
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2601,8 +2626,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
