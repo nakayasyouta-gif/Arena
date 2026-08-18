@@ -11,6 +11,9 @@ public class TurnTextChanger : MonoBehaviour
     private void Start()
     {
         UpdateText();
+        DontDestroyOnLoad(daytext);
+        DontDestroyOnLoad (turntext);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void UpdateText()
@@ -18,8 +21,8 @@ public class TurnTextChanger : MonoBehaviour
         int day = SceneChanger.GetDayCount();
         int arena = SceneChanger.GetArenaCount();
 
-        daytext.text =$"{day}";
-        turntext.text = $"{arena}";
+        daytext.text =$"day{day}";
+        turntext.text = $"match{arena}";
 
     }
 }

@@ -11,6 +11,8 @@ public class NumberInput : MonoBehaviour
 
     [SerializeField]
     MonsterManager monsterManager;
+    [SerializeField]
+    InputFieldManager inputFieldManager;
 
     public void CheckNumber(int monsterno, string text, TMP_InputField inputfield)
     {
@@ -31,7 +33,9 @@ public class NumberInput : MonoBehaviour
 
         Debug.Log($"“ü—Í‚³‚ê‚½”’l = {num}");
 
+        GoldManager.gold -= num;
         gamblingManager.betManager.bet = num;
-        gamblingManager.betManager.no = monsterno;
+        gamblingManager.betManager.betno = monsterno;
+        ArenaLoader.LoadArenaScene();
     }
 }

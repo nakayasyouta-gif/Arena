@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MonsterCheck
@@ -5,31 +8,45 @@ public class MonsterCheck
     MonsterManager monsterManager;
     BetManager betManager;
 
-    public MonsterCheck(MonsterManager monstermanager)
+    public MonsterCheck(MonsterManager monstermanager,BetManager betmanager)
     {
         monsterManager = monstermanager;
+        betManager = betmanager;
     }
 
     public void MonsterDead(int no)
     {
         Debug.Log($"{monsterManager.monsters[no].monstername}‚Í‚½‚¨‚ê‚½");
 
-        monsterManager.RemoveMonster(no);
-
+        // monsterManager.RemoveMonster(no);
+        monsterManager.monsters[no].activemonster = false;
         CheckMonsters();
     }
 
     public void CheckMonsters()
     {
-        if (monsterManager.monsters.Count != 1)
+        int activeCount = 0;
+        MonsterStatus winner = null;
+
+        foreach (var monster in monsterManager.monsters)
+        {
+            if (monster.activemonster)
+            {
+                activeCount++;
+                winner = monster;
+            }
+        }
+
+        if (activeCount > 1)
             return;
 
-        Debug.Log($"{monsterManager.monsters[0].monstername}‚ÌŸ‚¿");
+        // ŸÒ‚ª‚¢‚È‚¢
+        if (winner == null)
+            return;
 
-        OnBattleBool.onbattle = false;
+        Debug.Log($"{winner.monstername}‚ÌŸ‚¿");
 
-        //“q‚¯‹àˆ—
-        betManager.ReturnGold();
+        GoldManager.gold += betManager.ReturnGold();
 
         SceneChanger.SceneLoaded();
     }

@@ -6,16 +6,11 @@ public class ObjSetter : MonoBehaviour
     [SerializeField]
     ObjManager objManager;
     [SerializeField]
-    SystemManager systemManager;
     MonsterManager monsterManager;
 
     [Header("グラフィックなどを持たせたオブジェクト")][SerializeField]
     GameObject[] monsterobjs;
 
-    private void Awake()
-    {
-        monsterManager=systemManager.monsterManager;
-    }
     /// <summary>
     /// オブジェクトのデータを取り出す
     /// </summary>

@@ -4,21 +4,30 @@ using UnityEngine.UI;
 
 public class HpBarManager : MonoBehaviour
 {
-    [SerializeField]
     MonsterManager monsterManager;
+
+    ObjManager objManager;
 
     [SerializeField]
     GameObject hpBarPrefab;
 
     [SerializeField]
     Transform hpBarParent;
-    [SerializeField]
-    ObjManager objManager;
 
     [SerializeField]
     Camera maincamera;
     List<Slider> hpBars = new List<Slider>();
 
+    private void Start()
+    {
+        monsterManager = GameObject.Find("MonsterManager").GetComponent<MonsterManager>();
+        objManager = GameObject.Find("ObjManager").GetComponent<ObjManager>();
+        foreach(var monster in monsterManager.monsters)
+        {
+            CreateHpBar();
+        }
+       
+    }
     /// <summary>
     /// HPÉoÅ[Çí«â¡
     /// </summary>

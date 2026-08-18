@@ -4,11 +4,12 @@ public class GamblingManager : MonoBehaviour
 {
 
     WinRateManager winRateManager;
-    [SerializeField]
+
+    [SerializeField] 
     MonsterManager monsterManager;
 
     public BetManager betManager {  get; private set;}
-    private void Start()
+    public void Start()
     {
         winRateManager = new WinRateManager(monsterManager);
         betManager = new BetManager(winRateManager);

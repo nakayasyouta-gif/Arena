@@ -7,14 +7,14 @@ public class CdUpdate : MonoBehaviour
     MonsterAct monsterAct { get; set; }
 
     [SerializeField]
-    PosSetter posSetter;
+    ObjMove objMove;
     private void Start()
     {
         monsterAct = systemManager.monsterAct;
     }
     void Update()
     {
-        if (monsterAct == null||!OnBattleBool.onbattle) return;
+        if (monsterAct == null) return;
         monsterAct.CountCd();
         for (int i = 0; i < monsterAct.actcds.Count; i++)
         {
@@ -22,7 +22,7 @@ public class CdUpdate : MonoBehaviour
 
             if (cd <= 0)
             {
-                posSetter.MoveObj(i);
+                objMove.MoveObj(i);
                 monsterAct.ResetActcd(i);
             }
         }
