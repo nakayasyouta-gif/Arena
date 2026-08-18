@@ -29,8 +29,6 @@ public class MonsterAct
 
     private void OnMonsterRemoved(int no)
     {
-        Debug.Log($"MonsterAct: {no}”Ô‚Ìƒ‚ƒ“ƒXƒ^[‚ªíœ‚³‚ê‚½");
-
         actcds.RemoveAt(no);
 
         SetTargets();
@@ -73,17 +71,18 @@ public class MonsterAct
     {
         for (int i = 0; i < actcds.Count; ++i)
         {
+            if (i >= monsterManager.monsters.Count)continue;
+
+            if (targets.Count <= i || targets[i].Count == 0)continue;
+
             actcds[i] -= Time.deltaTime;
 
             if (actcds[i] <= 0f)
             {
-
-                int targetno =
-                    targets[i][Random.Range(0, targets[i].Count)];
+                int targetno =targets[i][Random.Range(0, targets[i].Count)];
 
                 hpCalculator.Damage(i, targetno);
 
-                if (i >= monsterManager.monsters.Count)continue;
             }
         }
     }

@@ -29,6 +29,8 @@ public class MonsterStatus
 
     public float actcd { get { return 5f - (statuss[(int)StatusCategory.speed] * 0.05f); }}
 
+    public bool activemonster { get; set; } = true;
+
 public MonsterStatus(float[] statusvalue, string name, Element element, ConditionBonus condition)
     {
         this.element = element;

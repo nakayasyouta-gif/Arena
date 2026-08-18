@@ -11,8 +11,4 @@ public class BaseStatusManager:MonoBehaviour
 
     [field:Header(" ƒ‚ƒ“ƒXƒ^[‚Ìí—Ş")][field:SerializeField]
     public BaseStatus[] Statuss { get; private set; }
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 /// </summary>
 public class WinRateManager
 {
-    MonsterManager monsterManager;
+   public MonsterManager monsterManager {  get; private set;}
 
    public float[] odds { get; set; } =new float[2];
     public float[] winrates { get; set; } = new float[2];

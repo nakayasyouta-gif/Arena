@@ -14,8 +14,6 @@ public class DamageTextManager : MonoBehaviour
 
     [SerializeField] 
     Camera maincamera;
-
-    [SerializeField] 
     ObjManager objManager;
 
     private List<TextMeshProUGUI> damagetexts = new List<TextMeshProUGUI>();
@@ -25,6 +23,7 @@ public class DamageTextManager : MonoBehaviour
 
     private void Start()
     {
+        objManager = GameObject.Find("ObjManager").GetComponent<ObjManager>();
         CreateDamageTexts();
     }
 

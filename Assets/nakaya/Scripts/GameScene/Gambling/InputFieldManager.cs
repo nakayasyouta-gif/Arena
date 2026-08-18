@@ -2,9 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-/// <summary>
-/// “ü—Íó‚¯•t‚¯êŠ‚ğì‚Á‚Ä‚Â
-/// </summary>
 public class InputFieldManager : MonoBehaviour
 {
     [SerializeField]
@@ -25,19 +22,13 @@ public class InputFieldManager : MonoBehaviour
 
     List<TMP_InputField> inputfields = new List<TMP_InputField>();
 
-    private void Start()
-    {
-        CreateInputFields();
-    }
-
-    void CreateInputFields()
+    public void CreateInputFields()
     {
         Canvas canvas = fieldparent.GetComponentInParent<Canvas>();
 
         for (int i = 0; i < monstermanager.monsters.Count; ++i)
         {
-            TMP_InputField field =
-                Instantiate(inputfield, fieldparent);
+            TMP_InputField field =Instantiate(inputfield, fieldparent);
 
             Vector2 screenPosition = inputFieldPositions[i];
 
@@ -61,7 +52,7 @@ public class InputFieldManager : MonoBehaviour
 
             field.onEndEdit.AddListener((text) =>
             {
-                numberInput.CheckNumber(index, text,field);
+                numberInput.CheckNumber(index, text, field);
             });
 
             inputfields.Add(field);

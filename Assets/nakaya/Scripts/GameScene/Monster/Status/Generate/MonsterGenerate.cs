@@ -10,15 +10,17 @@ public class MonsterGenerate:MonoBehaviour
     [SerializeField]
     MonsterManager monsterManager;
     [SerializeField]
-    SystemManager systemManager;
-    [SerializeField]
     ObjSetter objSetter;
+    [SerializeField]
+    InputFieldManager inputFieldManager;
     [SerializeField]
     int GenCount=2;
 
     private void Awake()
     {
         MonsterGeneration();
+        objSetter.SetObj();
+        inputFieldManager.CreateInputFields();
     }
     private void MonsterGeneration()
     {
@@ -30,8 +32,6 @@ public class MonsterGenerate:MonoBehaviour
             Debug.Log(conditionManager.conditionBonuss[conditiontype].name);
             monsterManager.monsters.Add(StatusGenerate.GenStatus(statusManager.Statuss[monstertype], conditionManager.conditionBonuss[conditiontype]));
         }
-        systemManager.Initialize();
-        objSetter.SetObj();
     }
 }
 
