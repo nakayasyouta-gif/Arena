@@ -1,41 +1,39 @@
 using TMPro;
 using UnityEngine;
 
-/// <summary>
-/// InputField‚É‚½‚¹‚é
-/// </summary>
 public class NumberInput : MonoBehaviour
 {
     [SerializeField]
     GamblingManager gamblingManager;
 
     [SerializeField]
-    MonsterManager monsterManager;
-    [SerializeField]
-    InputFieldManager inputFieldManager;
+    TMP_InputField inputField;
 
-    public void CheckNumber(int monsterno, string text, TMP_InputField inputfield)
+    [SerializeField]
+    int monsterno;
+
+    public void CheckNumber(string text)
     {
+        Debug.Log($"“ü—Í‚³‚ê‚½•¶š = {text}");
+
         if (!int.TryParse(text, out int num))
         {
-            inputfield.text = "";
             return;
         }
 
-        if (num > GoldManager.gold)
+        if (num <= 0 || num > GoldManager.gold)
         {
-            inputfield.text = "";
-            inputfield.Select();
-            inputfield.ActivateInputField();
-
+            inputField.text = "";
+            inputField.Select();
+            inputField.ActivateInputField();
             return;
         }
 
-        Debug.Log($"“ü—Í‚³‚ê‚½”’l = {num}");
-
-        GoldManager.gold -= num;
         gamblingManager.betManager.bet = num;
         gamblingManager.betManager.betno = monsterno;
+
+        GoldManager.gold -= num;
+        OnBattle.Battle = true;
         ArenaLoader.LoadArenaScene();
     }
 }

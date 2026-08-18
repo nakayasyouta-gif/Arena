@@ -16,7 +16,7 @@ public class HpBarManager : MonoBehaviour
 
     [SerializeField]
     Camera maincamera;
-    List<Slider> hpBars = new List<Slider>();
+    public List<Slider> hpBars { get; private set; } = new List<Slider>();
 
     private void Start()
     {
@@ -68,8 +68,7 @@ public class HpBarManager : MonoBehaviour
     /// </summary>
     public void RemoveHpBar(int no)
     {
-        if (no < 0 || no >= hpBars.Count)
-            return;
+        if (no <0 || no >= hpBars.Count)return;
 
         Destroy(hpBars[no].gameObject);
 
@@ -80,15 +79,13 @@ public class HpBarManager : MonoBehaviour
     {
         for (int i = 0; i < hpBars.Count; i++)
         {
-            if (i >= objManager.monsterobjs.Count)
-                continue;
+            if (i >= objManager.monsterobjs.Count) continue;
 
             Vector3 worldPos = objManager.monsterobjs[i].transform.position;
 
             Vector3 screenPos =maincamera.WorldToScreenPoint(worldPos);
 
-            hpBars[i].transform.position =
-                screenPos + new Vector3(0, 40f, 0);
+            hpBars[i].transform.position = screenPos + new Vector3(0, 40f, 0);
         }
     }
 }
