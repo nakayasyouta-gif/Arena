@@ -17,20 +17,20 @@ public static class SceneChanger
 
     public static void SceneLoaded()
     {
-        arenacount++;
         if(!GoldManager.CheckGold())
         {
             //ゲームオーバー
         }
-        if (arenacount > 5)
+        if (arenacount >= 5)
         {
             ++daycount;
             arenacount = 1;
-            SceneManager.LoadScene("ShopScene");
+            ShopLoader.LoadShopScene();
         }
         else
         {
-            SceneManager.LoadScene("BetScene");
+            arenacount++;
+            BetLoader.LoadBetScene();
         }
     }
 }

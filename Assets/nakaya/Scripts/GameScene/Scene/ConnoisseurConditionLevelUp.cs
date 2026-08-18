@@ -16,8 +16,7 @@ public class ConnoisseurConditionLevelUp : MonoBehaviour
 
     public void LevelUp()
     {
-        ConnoisseurLevel currentlevel =
-            Connoisseur.GetConditionConnoisseurLevel();
+        ConnoisseurLevel currentlevel =Connoisseur.GetConditionConnoisseurLevel();
 
         if (currentlevel == ConnoisseurLevel.high)
         {
@@ -31,16 +30,14 @@ public class ConnoisseurConditionLevelUp : MonoBehaviour
 
         GoldManager.gold -= conditioncost;
 
-        Connoisseur.SetConditionConnoisseurLevel(
-            ConnoisseurLevel.high);
+        Connoisseur.SetConditionConnoisseurLevel(ConnoisseurLevel.high);
 
         ViewCost();
     }
 
     public void ViewCost()
     {
-        ConnoisseurLevel currentlevel =
-            Connoisseur.GetConditionConnoisseurLevel();
+        ConnoisseurLevel currentlevel =Connoisseur.GetConditionConnoisseurLevel();
 
         if (currentlevel == ConnoisseurLevel.high)
         {

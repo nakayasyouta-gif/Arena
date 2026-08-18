@@ -10,7 +10,12 @@ public class ViewStatus : MonoBehaviour
     MonsterManager monstermanager;
 
     [SerializeField]
-    TextMeshProUGUI[] statustexts = new TextMeshProUGUI[(int)StatusCategory.speed];
+    TextMeshProUGUI[] statustexts =
+        new TextMeshProUGUI[(int)StatusCategory.speed];
+
+    // 条件名を表示するテキスト
+    [SerializeField]
+    TextMeshProUGUI conditiontext;
 
     [SerializeField]
     float minratio = 0.5f;
@@ -27,11 +32,12 @@ public class ViewStatus : MonoBehaviour
     {
         MonsterStatus status = monstermanager.monsters[monsterno];
 
-        for (int i = 0; i <= (int)StatusCategory.crit; i++)
+        conditiontext.text = status.conditionBonus.name;
+
+        for (int i = 0; i <= (int)StatusCategory.speed; i++)
         {
             StatusCategory category = (StatusCategory)i;
 
-            // maxhpはcurrenthpと重複するため表示しない
             if (category == StatusCategory.maxhp)
             {
                 continue;
@@ -43,7 +49,9 @@ public class ViewStatus : MonoBehaviour
         }
     }
 
-    private string GetStatusValue(MonsterStatus status, StatusCategory category)
+    private string GetStatusValue(
+        MonsterStatus status,
+        StatusCategory category)
     {
         float value = status.statuss[(int)category];
 
@@ -68,7 +76,8 @@ public class ViewStatus : MonoBehaviour
             case ConnoisseurLevel.high:
                 return value.ToString();
 
-            default:return value.ToString();
+            default:
+                return value.ToString();
         }
     }
 }
