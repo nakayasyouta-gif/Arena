@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using AudioName;
 
 public class ResultOnClick : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ResultOnClick : MonoBehaviour
     float waitTime = 2f;
 
     private bool clicked = false;
+    private bool checkWinner = false;
 
     /// <summary>
     /// 0 = 負け1 = 勝ち
@@ -29,29 +31,36 @@ public class ResultOnClick : MonoBehaviour
         if (winnerNo == betManager.betno)
         {
             result = 1;
+            AudioManager.Instance.PlayBGM(BGMName.WIN_BGM_NAME);
         }
         else
         {
             result = 0;
+            AudioManager.Instance.PlayBGM(BGMName.LOSE_BGM_NAME);
         }
+
+        checkWinner = true;
     }
 
-    private void OnMouseDown()
+    private void Update()
     {
-        if (clicked)
-            return;
-
-        clicked = true;
-
-        // 勝敗に応じたオブジェクトを表示
-        if (resultObjects[result] != null)
+        if (Input.GetMouseButtonDown(0))
         {
-            resultObjects[result].SetActive(true);
+            if (clicked || !checkWinner)
+                return;
+
+            clicked = true;
+
+            // 勝敗に応じたオブジェクトを表示
+            if (resultObjects[result] != null)
+            {
+                resultObjects[result].SetActive(true);
+            }
+
+            checkWinner = false;
+            StartCoroutine(MoveScene());
         }
-
-        StartCoroutine(MoveScene());
     }
-
     private IEnumerator MoveScene()
     {
         yield return new WaitForSeconds(waitTime);
@@ -61,6 +70,9 @@ public class ResultOnClick : MonoBehaviour
         {
             GoldManager.gold += betManager.ReturnGold();
         }
+
+        AudioManager.Instance.StopBGM(BGMName.LOSE_BGM_NAME);
+        AudioManager.Instance.StopBGM(BGMName.WIN_BGM_NAME);
 
         SceneChanger.SceneLoaded();
     }

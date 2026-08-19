@@ -24,7 +24,7 @@ public class MonsterGenerate:MonoBehaviour
             int monstertype = Random.Range(0, statusManager.Statuss.Length);
             int conditiontype = Random.Range(0, conditionManager.conditionBonuss.Length);
             Debug.Log(statusManager.Statuss[monstertype].monstername);
-            Debug.Log(conditionManager.conditionBonuss[conditiontype].name);
+            Debug.Log(conditionManager.conditionBonuss[conditiontype].conditionName);
             monsterManager.monsters.Add(StatusGenerate.GenStatus(statusManager.Statuss[monstertype], conditionManager.conditionBonuss[conditiontype]));
         }
         objSetter.SetObj();
